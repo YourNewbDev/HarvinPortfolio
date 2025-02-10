@@ -27,3 +27,21 @@ document.getElementById("contact-form")?.addEventListener("submit", function(eve
             alert("Failed to send message. Please try again later.");
         });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".nav-link").forEach(link => {
+        link.addEventListener("click", function (e) {
+            const targetId = this.getAttribute("href").substring(1);
+            const targetSection = document.getElementById(targetId);
+
+            if (targetSection) {
+                e.preventDefault(); // Prevents `#` from showing in URL
+                targetSection.scrollIntoView(); // Jumps directly to the section
+
+                // Updates the URL without `#`
+                history.pushState(null, null, window.location.pathname);
+            }
+        });
+    });
+});
+
