@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style/custom.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        (function () {
+            emailjs.init("fveVn0nMZ9epMPE57"); // Replace with your actual EmailJS user ID
+        })();
+    </script>
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand text-white fw-bolder" href="#">HKW</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link text-white fw-bold" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link text-white fw-bold" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link text-white fw-bold" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-header bg-primary text-white text-center py-5">
+        <div class="container">
+            <img src="assets/image/profile.png" class="rounded img-fluid profile-img mb-2" alt="">
+            <h1>Hi, I am <strong class="text-dark fw-bolder">Harvin Krist</strong></h1>
+            <h3 class="fw-light">
+                <strong class="fw-bold text-dark fs-2">&lt;</strong>
+                Aspiring Web Developer
+                <strong class="fw-bold text-dark fs-2">/ &gt;</strong>
+            </h3>
+            <a href="assets/cv/HARVINKRISTWAGE.pdf" download class="btn btn-light my-3">Download CV</a>
+        </div>
+
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container text-center mb-5">
+            <h2 class="text-primary">ABOUT ME</h2>
+            <p class="fs-6">Hi! I'm currently a full-time pricing analyst, a father of two with a beautiful wife.
+                Graduate of <strong class="text-dark">Bachelor of Science in Information Technology</strong> from
+                <strong class="text-primary">STI College Tarlac</strong>.
+            </p>
+
+            <p>
+                While my professional experience is not yet in the IT field, my passion for technology and web
+                development drives me to continuously learn and grow. I am committed to developing my skills, embracing
+                new challenges, and pursuing my dream career in IT with dedication and perseverance.
+            </p>
+        </div>
+        <div class="container">
+            <h2 class="text-primary text-center">TECH SKILLS AND KNOWLEDGE</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card tech-stack-card">
+                        <div class="card-body">
+                            <h5 class="card-title text-white text-center bg-primary py-2 tech-stack-title mb-3">Front
+                                End</h5>
+                            <div class="d-flex justify-content-evenly flex-wrap">
+                                <img src="assets/image/html-5.png" class="img-fluid tech-stack-img mb-3" alt="HTM">
+                                <img src="assets/image/css-3.png" class="img-fluid tech-stack-img mb-3" alt="CSS">
+                                <img src="assets/image/js.png" class="img-fluid tech-stack-img mb-3" alt="JSS">
+                                <img src="assets/image/bootstrap.png" class="img-fluid tech-stack-img mb-3"
+                                    alt="Bootstrap">
+                                <img src="assets/image/tailwind-css.512x307.png" class="img-fluid tech-stack-img mb-3"
+                                    alt="Tailwind">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card tech-stack-card">
+                        <div class="card-body">
+                            <h5 class="card-title text-white text-center bg-primary py-2 tech-stack-title mb-3">Back End
+                            </h5>
+                            <div class="d-flex justify-content-evenly flex-wrap">
+                                <img src="assets/image/php.png" class="img-fluid tech-stack-img mb-3" alt="PHP">
+                                <img src="assets/image/python.png" class="img-fluid tech-stack-img mb-3" alt="Python">
+                                <img src="assets/image/nestjs.512x510.png" class="img-fluid tech-stack-img mb-3"
+                                    alt="NestJS">
+                                <img src="assets/image/mysql.png" class="img-fluid tech-stack-img mb-3" alt="Mysql">
+                                <img src="assets/image/postgre.png" class="img-fluid tech-stack-img mb-3"
+                                    alt="Postgres">
+                                <img src="assets/image/cloud-api.png" class="img-fluid tech-stack-img mb-3"
+                                    alt="RESTful API">
+                                <img src="assets/image/prisma.423x512.png" class="img-fluid tech-stack-img mb-3"
+                                    alt="Prisma">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card tech-stack-card">
+                        <div class="card-body">
+                            <h5 class="card-title text-white text-center bg-primary py-2 tech-stack-title mb-3">Others
+                            </h5>
+                            <div class="d-flex justify-content-evenly flex-wrap">
+                                <img src="assets/image/postman.497x512.png" class="img-fluid tech-stack-img mb-3"
+                                    alt="Postman">
+                                <img src="assets/image/git.512x512.png" class="img-fluid tech-stack-img mb-3" alt="Git">
+                                <img src="assets/image/github.png" class="img-fluid tech-stack-img mb-3" alt="Github">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-5 bg-primary">
+        <div class="container text-center">
+            <h2 class="text-white">PORTFOLIO</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">To be announced</h5>
+                            <p class="card-text">Stay tuned!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">To be announced</h5>
+                            <p class="card-text">Stay tuned!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">To be announced</h5>
+                            <p class="card-text">Stay tuned!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <h2 class="text-primary text-center">SOCIALS</h2>
+                    <div class="card tech-stack-card">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-evenly flex-wrap">
+                                <a href="https://www.facebook.com/phantasm07" target="_blank">
+                                    <img src="assets/image/facebook.512x512.png" class="img-fluid social-img mb-3" alt="Facebook">
+                                </a>
+                                <a href="https://www.instagram.com/harvinkrist_/" target="_blank">
+                                    <img src="assets/image/instagram.512x512.png" class="img-fluid social-img mb-3" alt="Instagram">
+                                </a>
+                                <a href="https://www.linkedin.com/in/harvin-krist-wage-712363159/" target="_blank">
+                                    <img src="assets/image/linkedin-original.512x512.png" class="img-fluid social-img mb-3" alt="LinkedIn">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <h2 class="text-primary text-center">LETS CONNECT</h2>
+                    <form id="contact-form">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" name="user_name" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" name="user_email" placeholder="Your Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" name="message" rows="4" placeholder="Your Message"
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-primary text-white text-center py-3">
+        <p class="mb-0">© Harvin Krist. All Rights Reserved.</p>
+    </footer>
+
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/style/custom.js"></script>
+</body>
+
+</html>
