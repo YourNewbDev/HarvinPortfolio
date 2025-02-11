@@ -1,10 +1,10 @@
-window.addEventListener('scroll', function () {
-    let navbar = document.querySelector('.navbar');
+window.addEventListener("scroll", function () {
+    let navbar = document.querySelector(".navbar");
 
     if (window.scrollY > 5) {
-        navbar.classList.add('scrolled');
+        navbar.classList.add("scrolled");
     } else {
-        navbar.classList.remove('scrolled');
+        navbar.classList.remove("scrolled");
     }
 });
 
@@ -17,26 +17,22 @@ document.addEventListener("click", function (event) {
     }
 });
 
-document.getElementById("contact-form")?.addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent page reload
-
-    emailjs.sendForm("service_gnowg5k", "template_1jxysjv", this, "fveVn0nMZ9epMPE57")
-        .then(function() {
-            alert("Message sent successfully!");
-        }, function(error) {
-            alert("Failed to send message. Please try again later.");
-        });
-});
-
 document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll(".nav-link").forEach(link => {
         link.addEventListener("click", function (e) {
             const targetId = this.getAttribute("href").substring(1);
-            const targetSection = document.getElementById(targetId);
+            const targetElement = document.getElementById(targetId);
 
-            if (targetSection) {
-                e.preventDefault(); // Prevents `#` from showing in URL
-                targetSection.scrollIntoView(); // Jumps directly to the section
+            if (targetElement) {
+                e.preventDefault();
+                
+                const navbarHeight = document.querySelector(".navbar").offsetHeight;
+                const offsetTop = targetElement.offsetTop - navbarHeight - 2; // Adjusting offset
+                
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: "smooth"
+                });
 
                 // Updates the URL without `#`
                 history.pushState(null, null, window.location.pathname);
@@ -45,3 +41,36 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+document.getElementById("contact-form")?.addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent page reload
+
+    let form = this;
+    let submitButton = form.querySelector("button[type=submit]");
+
+    // Disable the entire form
+    Array.from(form.elements).forEach(element => element.disabled = true);
+    submitButton.innerHTML = `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...`;
+
+    emailjs.sendForm("service_gnowg5k", "template_1jxysjv", form, "fveVn0nMZ9epMPE57")
+        .then(() => {
+            setTimeout(() => {
+                let successModal = new bootstrap.Modal(document.getElementById("successModal"));
+                successModal.show();
+
+                // Reset the form fields
+                form.reset();
+
+                // Re-enable the form
+                Array.from(form.elements).forEach(element => element.disabled = false);
+                submitButton.innerHTML = "Send Message";
+            }, 1000);
+        })
+        .catch(() => {
+            let errorModal = new bootstrap.Modal(document.getElementById("errorModal"));
+            errorModal.show();
+
+            // Re-enable the form
+            Array.from(form.elements).forEach(element => element.disabled = false);
+            submitButton.innerHTML = "Send Message";
+        });
+});

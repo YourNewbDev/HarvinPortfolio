@@ -169,13 +169,16 @@
                         <div class="card-body">
                             <div class="d-flex justify-content-evenly flex-wrap">
                                 <a href="https://www.facebook.com/phantasm07" target="_blank">
-                                    <img src="assets/image/facebook.512x512.png" class="img-fluid social-img mb-3" alt="Facebook">
+                                    <img src="assets/image/facebook.512x512.png" class="img-fluid social-img mb-3"
+                                        alt="Facebook">
                                 </a>
                                 <a href="https://www.instagram.com/harvinkrist_/" target="_blank">
-                                    <img src="assets/image/instagram.512x512.png" class="img-fluid social-img mb-3" alt="Instagram">
+                                    <img src="assets/image/instagram.512x512.png" class="img-fluid social-img mb-3"
+                                        alt="Instagram">
                                 </a>
                                 <a href="https://www.linkedin.com/in/harvin-krist-wage-712363159/" target="_blank">
-                                    <img src="assets/image/linkedin-original.512x512.png" class="img-fluid social-img mb-3" alt="LinkedIn">
+                                    <img src="assets/image/linkedin-original.512x512.png"
+                                        class="img-fluid social-img mb-3" alt="LinkedIn">
                                 </a>
                             </div>
                         </div>
@@ -188,7 +191,8 @@
                             <input type="text" class="form-control" name="user_name" placeholder="Your Name" required>
                         </div>
                         <div class="mb-3">
-                            <input type="email" class="form-control" name="user_email" placeholder="Your Email" required>
+                            <input type="email" class="form-control" name="user_email" placeholder="Your Email"
+                                required>
                         </div>
                         <div class="mb-3">
                             <textarea class="form-control" name="message" rows="4" placeholder="Your Message"
@@ -204,6 +208,43 @@
     <footer class="bg-primary text-white text-center py-3">
         <p class="mb-0">© Harvin Krist. All Rights Reserved.</p>
     </footer>
+
+    <!-- Success Modal -->
+    <div class="modal fade mt-5" id="successModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title">Success</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Your message has been sent successfully! ✅
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Error Modal -->
+    <div class="modal fade mt-5" id="errorModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title">Error</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Failed to send your message. ❌ Please try again.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/style/custom.js"></script>
