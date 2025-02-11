@@ -10,9 +10,9 @@
     <link rel="icon" type="image/x-icon" href="assets/image/logo.png">
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
-        (function () {
-            emailjs.init("fveVn0nMZ9epMPE57"); // Replace with your actual EmailJS user ID
-        })();
+        document.addEventListener("DOMContentLoaded", function () {
+            emailjs.init("fveVn0nMZ9epMPE57");
+        });
     </script>
 
 </head>
@@ -38,7 +38,7 @@
     <!-- Hero Section -->
     <header class="hero-header bg-primary text-white text-center py-5">
         <div class="container">
-            <img src="assets/image/profile.png" class="rounded img-fluid profile-img mb-2" alt="">
+            <img src="assets/image/profile.png" class="rounded img-fluid profile-img mb-2" alt="" loading="lazy">
             <h1>Hi, I am <strong class="text-dark fw-bolder">Harvin Krist</strong></h1>
             <h3 class="fw-light">
                 <strong class="fw-bold text-dark fs-2">&lt;</strong>
@@ -195,8 +195,8 @@
                                 required>
                         </div>
                         <div class="mb-3">
-                            <textarea class="form-control" name="message" rows="4" placeholder="Your Message"
-                                required></textarea>
+                            <textarea class="form-control" name="message" id="message" rows="4"
+                                placeholder="Your Message" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Send Message</button>
                     </form>

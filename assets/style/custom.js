@@ -44,33 +44,29 @@ document.addEventListener("DOMContentLoaded", function () {
 document.getElementById("contact-form")?.addEventListener("submit", function(event) {
     event.preventDefault(); // Prevent page reload
 
-    let form = this;
-    let submitButton = form.querySelector("button[type=submit]");
-
-    // Disable the entire form
-    Array.from(form.elements).forEach(element => element.disabled = true);
+    let submitButton = this.querySelector("button[type=submit]");
+    submitButton.disabled = true;
     submitButton.innerHTML = `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...`;
 
-    emailjs.sendForm("service_gnowg5k", "template_1jxysjv", form, "fveVn0nMZ9epMPE57")
+    emailjs.sendForm("service_gnowg5k", "template_1jxysjv", this, "fveVn0nMZ9epMPE57")
         .then(() => {
-            setTimeout(() => {
+            setTimeout(() => { 
                 let successModal = new bootstrap.Modal(document.getElementById("successModal"));
                 successModal.show();
 
                 // Reset the form fields
-                form.reset();
+                event.target.reset();
 
-                // Re-enable the form
-                Array.from(form.elements).forEach(element => element.disabled = false);
+                submitButton.disabled = false;
                 submitButton.innerHTML = "Send Message";
-            }, 1000);
+                
+            }, 4000);
         })
         .catch(() => {
             let errorModal = new bootstrap.Modal(document.getElementById("errorModal"));
             errorModal.show();
 
-            // Re-enable the form
-            Array.from(form.elements).forEach(element => element.disabled = false);
+            submitButton.disabled = false;
             submitButton.innerHTML = "Send Message";
         });
 });
